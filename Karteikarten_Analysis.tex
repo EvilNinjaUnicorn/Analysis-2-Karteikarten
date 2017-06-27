@@ -1,0 +1,371 @@
+\documentclass{article}
+
+\include{preambel}
+
+\subject{Analysis II}
+
+\begin{document}
+
+\begin{flashcard}[Metrischer Raum]{2. Abstandsmessung}
+
+  \centerall{
+    Wie ist der metrische Raum definiert?
+}
+
+\backside
+
+\vspace*{1cm}
+
+$\textbf{Modell } \text{metrischerRaum}$ \\
+  $\textbf{benutzt } X,d \with$
+  \begin{tabulator}
+    $X : \text{Menge};$ \\
+    $d : X \times X \rightarrow \R;$ \\
+    $\forall x,y \with x,y \in X \then (d(x,y) = 0) \Leftrightarrow (x=y);$ \\
+    $\forall x,y \with x,y \in X \then d(x,y) = d(y,x);$ \\
+    $\forall x,y,z \with x,y,z \in X \then d(x,z) \leq d(x,y) + d(y,z);$
+    \end{tabulator}
+  $\Box$
+
+
+\end{flashcard}
+
+
+
+
+\begin{flashcard}[Wichtige Begriffe]{2. Abstandsmessung}
+
+  \centerall{
+   Definiere folgende Begriffe:
+   \begin{itemize}
+   \item[(a)] Grenzwert
+   \item[(b)] Kugel
+   \item[(c)] beschränkt
+   \item[(d)] Cauchyfolge
+   \end{itemize}
+ }
+
+ \backside
+
+\begin{itemize}
+\item[(a)] $\text{Grenzwert}(a \with a:\text{Folge}) := A \with A \in X; \forall \varepsilon
+ \with \varepsilon > 0 \then \exists N \with N \in \N; \; \forall n \with
+ \N_{\geq N} \then d(a_{n}, A) < \varepsilon \; \Box$
+
+\item[(b)] $B(r,x \with r \in \R_{>0}; \; x \in X) := \{y \with d(y,x) < r\};$
+
+\item[(c)] $\text{beschränkt} := M \with M \subseteq X; \; \exists R,x \with M
+  \subseteq B_{R}(x) \; \Box \; \Box;$
+\item[(d)] $\text{Cauchyfolge} := a \with a:\text{Folge}; \; \forall \varepsilon
+  \with \epsilon > 0 \then \exists N \with N \in \N; \; \forall
+  n,m \in \N_{\geq N} \then d(a_{n}, a_{m}) < \varepsilon \; \Box \; \Box;$
+\end{itemize}
+\end{flashcard}
+
+
+
+\begin{flashcard}[Diskrete Metrik]{2. Abstandsmessung}
+
+\centerall{
+  Definiere diskrete Metrik.
+  Welche Mengen sind mit der diskreten Metrik zusammen ein Generator für einen
+  metrischen Raum?
+}
+
+
+  \backside
+
+  $\text{diskreteMetrik} := x,y \with x,y \in X \rightarrow
+    \begin{cases}
+    1 & x \neq y \\
+    0 & \text{sonst}
+  \end{cases}
+$
+
+$\forall X \with X : \text{Menge} \then (X, \text{diskreteMetrik}(X)) : \text{Gen}(\text{metrischerRaum});$
+\end{flashcard}
+
+
+\begin{flashcard}[Vollständige Räume]{2. Abstandsmessung}
+
+\begin{center}
+  Sind i.A. alle Cauchyfolgen konvergent?\\
+  Wann ist ein Raum vollständig?\\
+  Gebe ein Beispiel für nicht vollständige Räume an. Wieso ist dieser nicht vollständig?
+\end{center}
+
+
+  \backside
+
+  Im allgemeinen sind Cauchyfolgen \textbf{nicht} konvergent.\\
+  $\text{vollständig} := M \with M:\text{metrischerRaum}; \; \forall a \with
+  a:M.\text{Cauchyfolge} \then a:M.\text{konvergent} \; \Box$
+  $M\R^{*} := metrischerRaum(\R^{*}, A1.d|_{\R^{*} \times \R^{*}})$
+  Ist nicht vollständig, da $a := (\frac{1}{n})_{n \in \N}$ Cauchyfolge und divergent in
+  $M\R^{*}$ ist.
+  \end{flashcard}
+
+
+
+\begin{flashcard}[Normierte Räume]{2. Abstandsmessung}
+
+
+  \centerall{
+    Wie ist der normierte Raum definiert?\\
+    Was ist ein Banachraum?
+}
+
+\backside
+
+$\textbf{Modell } \text{normierterRaum}$ \\
+  $\textbf{benutzt } V,\text{Norm} \with$
+  \begin{tabulator}
+    $V : \text{Vektorraum};$ \\
+    $V.K = \text{A1.reellerKörper}$; \\
+    $X := V.X$; \\
+    $0_{V} := V.0$; \\
+    $\text{Norm} : X \rightarrow \R;$ \\
+    $\forall x \with ||x|| = 0 \then x = 0_{V};$ \\
+    $\forall \lambda,x \with \lambda \in \R; \; x \in X \then ||\lambda \odot
+    x|| = |\lambda| \cdot ||x||;$ \\
+    $\forall x,y \with x,y \in X \then ||x \oplus y|| \leq ||x|| + ||y||;$
+    \end{tabulator}
+  $\Box$
+
+  $\text{Banachraum := R \with R : normierterRaum; \; R.M : \text{vollständig}}
+  \; \Box;$
+
+
+\end{flashcard}
+
+
+\begin{flashcard}[]{2. Abstandsmessung}
+  \centerall{
+    Wie ist der Skalarproduktraum definiert?\\
+    Was ist ein Hilbertraum?
+
+}
+
+\backside
+
+$\textbf{Modell } \text{Skalarproduktraum}$ \\
+  $\textbf{benutzt } V,\text{SP} \with$
+  \begin{tabulator}
+    $V : \text{Vektorraum};$ \\
+    $V.K = \text{A1.reellerKörper}$; \\
+    $X := V.X$; \\
+    $0_{V} := V.0$; \\
+    $\text{SP} : X \rightarrow \R;$ \\
+    $\forall x \with x \in X \then \langle x,x \rangle \geq 0$; \\
+    $\forall x \with \langle x,x \rangle = 0 \then x = 0_{V};$ \\
+    $\forall x,y \with x,y \in X \then \langle x,y \rangle = \langle y,x \rangle;$ \\
+    $\forall \lambda,x,y,z \with \lambda \in \R; \; x,y,z \in X \then \langle
+    x,(\lambda \odot y) \oplus z \rangle = \lambda \cdot \langle x,y \rangle +
+    \langle x,z \rangle;$
+    \end{tabulator}
+  $\Box$
+
+  $\text{Hilertraum := H \with H : Skalarproduktraum; \; H.M : \text{vollständig}}
+  \; \Box;$
+
+
+\end{flashcard}
+
+
+
+\begin{flashcard}[Winkel messen]{2. Abstandsmessung}
+
+
+  \centerall{
+    In welchem Raum können Winkel gemessen werden?\\
+    Wie hängen Winkel und Skalarprodukt zusammen?\\
+    Wie ist die Projektion definiert?\\
+    Wie induziert der Skalarproduktraum eine Norm?\\
+    Wie lautet die Cauchy-Schwarz-Ungleichung
+
+  }
+
+
+  \backside
+
+
+  In Skalarproduktraum.\\
+
+  $\cos \sphericalangle (x,y) = \frac{\langle x,y \rangle}{\sqrt{\langle x,x
+      \rangle \langle y,y \rangle}}$\\
+
+  $P(y \with y \in X; \; y \neq 0_{V}) := x \with x \in X \mapsto \frac{\langle
+    x,y \rangle}{\langle y,y \rangle} \odot y;$\\
+
+  $\text{Norm}(v \with v \in X) := \sqrt{\langle v,v \rangle};$\\
+
+  $\forall x,y \with x,y \in X \then |\langle x,y \rangle| \leq ||x|| \cdot ||y||;$
+
+\end{flashcard}
+
+
+\begin{flashcard}[Beispiele]{2. Abstandsmessung}
+
+  \centerall{
+
+   Definiere StandardSkalarprodukt, p-, Unendlich-, Integral- und Sup-Norm.
+
+  }
+
+  \backside
+
+  $\text{StandardSkalarprodukt}(x,y \with x,y : \text{diskretReellwertig}; \; \text{Def}(x) = \text{Def}(y)) := \sum \limits_{i \in \text{Def}(x)} x_{i} \cdot y_{i}$
+
+  $\text{Potenznorm}(p \with p \in \R_{\geq 1}) := x \with x : \text{diskretReellwertig} \mapsto \left( \sum \limits_{i \in \text{Def(x}} |x_{i}|^{p} \right)^{\frac{1}{p}}$\\
+
+  $\text{UnendlichNorm}(x \with x : \text{diskretReellwertig}) :=
+  \begin{cases}
+    \max \limits_{i \in \text{Def}(x)} |x_{i}| & \text{Def}(x) \neq \emptyset \\ 0 & \text{sonst}
+  \end{cases}$
+
+  $\text{Integralnorm}(p,a,b \with p \in \R_{\geq 1}; \; a < b) := f \with f \in \mathcal{F}(\I \left[a,b\right], \R); \; f: \text{stetig} \mapsto \left( \int \limits_{a}^{b} |f(x)|^{p} \text{d}x \right)^{\frac{1}{p}}$ Abk. $||f||_{\L^{p} (\I \left[ a,b \right])}$
+
+  $\text{SupNorm}(f \with f : \text{Funktion}; \; \text{Bild}(f) \subseteq \R) :=
+  \begin{cases}
+    \sup \limits_{x \in \text{Def}(f)} |f(x)| & \text{Def}(f) \neq \emptyset \\
+    0 & \text{sonst}
+  \end{cases}$ Abk. $||f||_{\infty}$
+
+\end{flashcard}
+
+
+\begin{flashcard}[]{2. Abstandsmessung}
+
+
+
+\centerall{
+
+  Wann ist eine Folge in $\mathcal{F}(E,\R)$ konvergent?
+
+}
+
+
+\backside
+
+
+\begin{satz}
+
+Sei $N := \text{NormierterRaum}(\mathcal{F} (E,\R), ||\cdot||_{p})$ mit einer endlichen Menge $E$ und $p \in \overline{\R}_{\geq 1}$. Ist $a$ eine Folge mit Werten in $\mathcal{F}(E,\R)$, dann ist $a$ genau dann $N$.konvergent, wenn für alle $i \in E$ die Folge $(a_{n}(i))_{n \in \N}$ A1.konvergent sind. In diesem Fall gilt $N.\text{Limes}(a)(i) = \text{A1.Limes}((a_{n}(i))_{n \in \N})$ für jeder $i \in E$. Außerdem ist $N$ ein Banachraum.
+
+\end{satz}
+
+\end{flashcard}
+
+\begin{flashcard}[]{2. Abstandsmessung}
+
+
+  \centerall{
+
+    Wie ist gleichmäßigKonvergent und punktweiseKonvergent definiert?
+
+}
+
+
+\backside
+
+$\text{gleichmäßigKonvergentGegen} (A \with  A:\text{reellwertig}) := a \with a:\N \rightarrow \mathcal{F}(\text{Def}(A), \R); \; (||a_{n} - A||_{\infty})_{n \in \N} : \text{A1.Nullfolge} \; \Box;$\\
+$\text{punktweiseKonvergentGegen}(A \with A:\text{reellwertig}) := a \with a:\N \rightarrow \mathcal{F}(\text{Def}, \R); \; \forall x \with x \in \text{Def}(A) \then (|a_{n}(x) - A(x)|)_{n \in \N} : \text{A1.Nullfolge} \; \Box;$
+
+\backside
+
+\end{flashcard}
+
+
+\begin{flashcard}[Mengen im metrischen Raum]{3. Stetigkeit}
+
+\centerall{
+Definiere die Begriffe Umgebung, offen und abgeschlossen.
+}
+
+\backside
+
+$\text{Umgebung}(x \with x \in X) := U \with U \subseteq X; \; \exists \varepsilon \with B_{\varepsilon}(x) \subseteq U \; \Box \Box ;$\\
+
+$\text{offen} := U \with U \subseteq X; \; \forall x \with x \in U \then U : \text{Umgebung}(x) \; \Box ;$\\
+
+$\text{abgeschlossen} := A \with A \subseteq X; \; X \setminus A : \text{offen} \; \Box ;$\\
+
+$\forall x, r \with x \in X; \; r > 0 \then B_{r}(x) : \text{offen};$\\
+
+$\forall x, U \with U \subseteq X; \; x \in X \then U : \text{Umgebung}(x) \Leftrightarrow \exists O \with x \in O; \; O \subseteq U; \; O : \text{offen} \; \Box$\\
+
+\end{flashcard}
+
+
+
+\begin{flashcard}[]{3. Stetigkeit}
+
+\centerall{
+  Definiere die Begriffe stetigIn, stetig und gebe die dazugehörigen Charakterisierungen.
+  }
+
+  \backside
+
+$\text{stetigIn}(x, N, M \with N, M : \text{metrischerRaum}):= f \with D := \text{Def}(f); \; D \subset N.X; \; \text{Bild}(f) \subset M.X; \; x \in D; \; \forall a \with a : N. \text{Folge}; \; \text{Bild}(a) \subset D; \; N.\lim a = x \then M.\lim \limits_{n \to \infty} f(a_{n}) = f(x) \; \Box;$\\
+
+$\text{stetig}(N, M \with N, M : \text{metrischerRaum}):= f \with f : N.X \mapsto M.X; \; \forall x \with x \in N.X \then f : \text{stetigIn}(x, N, M) \; \Box;$\\
+
+$\forall f, x, N, M \with N, M : \text{metrischerRaum} \then f : \text{stetig}(x, N, M ) \Leftrightarrow \forall \varepsilon \with \varepsilon > 0 \then \exists \delta \with \delta > 0; \; \forall y \with y \in N.B_{\delta}(x) \then f(y) \in M.B_{\varepsilon}(f(x)) \; \Box;$\\
+
+\newpage
+
+$\forall f, N, M, x \with N, M : \text{metrischerRaum}; \; f : N.X \mapsto M.X; \; x \in N.X \then f : \text{stetigIn}(x, N, M ) \Leftrightarrow \forall U \with U : M. \text{Umgebung}(f(x)) \then f^{-1}(U) : N. \text{Umgebung}(x);$\\
+
+$\forall f, N, M \with N, M : \text{metrischerRaum}; f : N.X \rightarrow M.X \then f \in C^{0}(N, M) \Leftrightarrow \forall U \with U : M. \text{offen} \then f^{-1}(U) : N. \text{offen};$\\
+
+$\forall f, N, M \with N, M : \text{metrischerRaum}; f : N.X \rightarrow M.X \then f \in C^{0}(N, M) \Leftrightarrow \forall U \with U : M. \text{abgeschlossen} \then f^{-1}(U) : N. \text{abgeschlossen};$
+
+\end{flashcard}
+
+
+\begin{flashcard}[]{3. Stetigkeit}
+
+  \centerall{
+    Wie ist der topologische Raum definiert?
+  }
+
+\backside
+
+$\textbf{Modell } \text{topologischerRaum}$ \\
+  $\textbf{benutzt } X,\tau \with$
+  \begin{tabulator}
+    $X: \text{Menge};$ \\
+    $\tau \subseteq \text{Pot}(X)$; \\
+    $\text{offen} := U \with U \in \tau \; \Box $; \\
+    $\emptyset : \text{offen}$; \\
+    $X : \text{offen};$ \\
+    $\forall \mathcal{M} \with \subseteq \tau; \; \mathcal{M} : \text{endlich} \then \bigcap \mathcal{M} : \text{offen};$ \\
+    $\forall \mathcal{M} \with \subseteq \tau \then \bigcap \mathcal{M} : \text{offen};$ \\
+    \end{tabulator}
+  $\Box$
+
+\end{flashcard}
+
+\begin{flashcard}[]{3. Stetigkeit}
+
+  $\text{Umgebung}(x \with x \in X) := U \with U \subseteq X; \exists O \with x \in O; \; O \subseteq U; \; O : \text{offen}$\\
+
+  $\text{innererPunkt}(M \with M \subseteq X) := x \with M : \text{Umgebung}(x) ;$\\
+
+  $\text{Inneres}(M \with M \subseteq X) := \{x \with M : \text{Umgebung}(x)\};$\\
+
+  $\text{Häufungspunkt}(M \with M \subseteq X) := x \with x \in X; \; \forall U \with U : \text{Umgebung}(x) \then \exists y \with y \in M \bigcap U; \; y \neq x;$\\
+
+  $\text{isolierterPunkt}(M \with M \subseteq X) := x \with x \in M; \neg (x : \text{Häufungspunkt}(M))$\\
+
+$\text{Berührpunkt}(M \with M \subseteq X) := x \with x \in X; \; \forall U \with U : \text{Umgebung}(x) \then \exists y \with y \in M \bigcap U \; \Box \Box;$\\
+
+$\text{Abschluss}(M \with M \subseteq X) := {x \with x :  \text{Berührpunkt}(M)};$\\
+
+$\text{Randpunkt}(M \with M \subseteq X) := x \with x : \text{Berührpunkt}(M); \; x : \text{Berührpunkt}(X \setminus M);$\\
+
+$\text{Rand}(M \with M \subseteq X) := {x \with x : \text{Randpunkt}(M)};$
+
+\end{flashcard}
+
+\end{document}
